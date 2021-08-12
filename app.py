@@ -14,6 +14,13 @@ exchange.loadMarkets()
 
 tf = '1d'
 
+@app.route('/loadusdtpairsonbinance')
+def loadusdtpairsonbinance():
+    symbols = exchange.symbols
+    suffix = '/USDT'
+    symbols = filter(lambda x: x.endswith(suffix), symbols)
+    return render_template('symbols.html', symbols=symbols)
+
 @app.route('/snapshot')
 def snapshot():
     with open('cryptodatasets/symbols.csv') as f:

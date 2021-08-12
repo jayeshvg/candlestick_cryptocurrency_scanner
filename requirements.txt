@@ -1,5 +1,4 @@
 flask
 TA-Lib
 pandas
-yfinance
 ccxt
